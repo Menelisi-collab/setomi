@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            _PlayButton(),
           ],
         ),
       ),
@@ -80,19 +81,12 @@ class _PlayButtonState extends State<_PlayButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('Tapped 0 times', style: TextStyle(fontSize: 30),),
-            Container(
-              padding: EdgeInsets.all(15),
-              color: Colors.cyan[200],
-              child: Text('PLAY', style: TextStyle(fontSize: 30),),
-            ),
-          ],
-        ),
+      body: SingleChildScrollView(
+        child: ElevatedButton( style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.lightGreenAccent),
+        elevation: MaterialStateProperty.all(8),
+        side: MaterialStateProperty.all<BorderSide>(const BorderSide(width: 1, style: BorderStyle.solid))),
+          onPressed: () {},
+        child: Text("PLAY"),),
       ),
-    );
-  }
+    );}
 }
